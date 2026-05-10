@@ -13,7 +13,7 @@ public class SpikeTrap : MonoBehaviour
 
             if (health != null)
             {
-                bool hasDied = health.TakeDamage(spikeDamage);
+                bool hasDied = health.TakeDamage(spikeDamage, transform.position);
 
                 if (!hasDied && movement != null)
                 {

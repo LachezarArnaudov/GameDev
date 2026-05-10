@@ -7,6 +7,11 @@ public class Enemy : MonoBehaviour
     private int currentHealth;
     public float knockbackForce = 5f;
 
+    [Header("Loot")]
+    public GameObject coinPrefab;
+    public int minCoinsToDrop = 2;
+    public int maxCoinsToDrop = 5;
+
     private Animator anim;
 
     void Start()
@@ -41,17 +46,29 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(gameObject.name + " Death!");
 
+        if (coinPrefab != null)
+        {
+            int coinsToDrop = Random.Range(minCoinsToDrop, maxCoinsToDrop + 1);
+
+            for (int i = 0; i < coinsToDrop; i++)
+            {
+                Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            }
+        }
+
         if (anim != null)
         {
             anim.SetBool("IsDead", true);
         }
 
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
+        EnemyAI ai = GetComponent<EnemyAI>();
+        if (ai != null) ai.enabled = false;
 
         this.enabled = false;
 
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-
-        Destroy(gameObject, 0.5f); 
+        Destroy(gameObject, 0.5f);
     }
 }

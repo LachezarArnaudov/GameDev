@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,12 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public Vector3 lastBenchPosition;
 
     [Header("UI Hearts")]
-    public Image[] hearts;        
+    public GameObject heartPrefab;
+    public Transform heartsParent;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
     public bool isInvincible = false;
-    public float invincibilityDuration = 1f;
+    public float invincibilityDuration = 0.5f;
 
     void Start()
     {
@@ -25,14 +25,15 @@ public class PlayerHealth : MonoBehaviour
         UpdateHeartsUI();
     }
 
-    public bool TakeDamage(int damage)
+    public bool TakeDamage(int damage, Vector2 damageSourcePosition)
     {
         if (isInvincible) return false;
 
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
         UpdateHeartsUI();
-        Debug.Log("Player is hit: " + currentHealth);
+
+        GetComponent<PlayerMovement>().ApplyKnockback(damageSourcePosition);
 
         if (currentHealth <= 0)
         {
@@ -46,26 +47,24 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void UpdateHeartsUI()
-    {       
-        for (int i = 0; i < hearts.Length; i++)
+    public void UpdateHeartsUI()
+    {
+        foreach (Transform child in heartsParent)
         {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < maxHealth; i++)
+        {
+            GameObject newHeart = Instantiate(heartPrefab, heartsParent);
+
             if (i < currentHealth)
             {
-                hearts[i].sprite = fullHeart;
+                newHeart.GetComponent<Image>().sprite = fullHeart;
             }
             else
             {
-                hearts[i].sprite = emptyHeart;
-            }
-
-            if (i < maxHealth)
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
+                newHeart.GetComponent<Image>().sprite = emptyHeart;
             }
         }
     }
@@ -85,6 +84,12 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Game Over!");
+        PlayerCurrency wallet = GetComponent<PlayerCurrency>();
+        if (wallet != null)
+        {
+            wallet.ResetCoins();
+        }
+      
         HealFull();
         isInvincible = false;
         transform.position = lastBenchPosition + new Vector3(0, 1.2f, 0);

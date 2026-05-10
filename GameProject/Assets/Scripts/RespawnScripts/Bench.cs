@@ -11,6 +11,7 @@ public class Bench : MonoBehaviour
         if (canRest && Input.GetKeyDown(interactionKey))
         {
             Rest();
+            RespawnEnemies();
         }
     }
 
@@ -28,6 +29,15 @@ public class Bench : MonoBehaviour
             health.HealFull();
 
             Debug.Log("Save");
+        }
+    }
+
+    void RespawnEnemies()
+    {
+        EnemySpawner[] spawners = FindObjectsByType<EnemySpawner>(FindObjectsSortMode.None);
+        foreach (EnemySpawner spawner in spawners)
+        {
+            spawner.Spawn();
         }
     }
 

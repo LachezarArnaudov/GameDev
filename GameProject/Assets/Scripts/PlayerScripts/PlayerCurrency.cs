@@ -1,0 +1,36 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerCurrency : MonoBehaviour
+{
+    public int currentCoins = 0;
+    public TextMeshProUGUI coinText;
+
+    void Start()
+    {
+        UpdateUI();
+    }
+
+    public void AddCoins(int amount)
+    {
+        currentCoins += amount;
+        UpdateUI();
+        Debug.Log("Money: " + currentCoins);
+    }
+
+    public void ResetCoins()
+    {
+        currentCoins = 0;
+        UpdateUI();
+        Debug.Log("Lost all money bozo!");
+    }
+
+    void UpdateUI()
+    {
+        if (coinText != null)
+        {
+            coinText.text = "Money: " + currentCoins;
+        }
+    }
+}

@@ -50,14 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableIfAttribute.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\AbilitiesScripts\DashTrail.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ButtonAttribute.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\KamikazeEnemy.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInEditModeAttribute.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerCurrency.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Enum.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInPlayModeAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Pixel Art Platformer - Village Props\Script\Chest.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\SectionHeaderAttribute.cs" />
     <Compile Include="Assets\Scripts\RespawnScripts\Bench.cs" />
+    <Compile Include="Assets\Scripts\MoneyManagementScripts\ShopManager.cs" />
     <Compile Include="Assets\Scripts\AbilitiesScripts\AbilityItem.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BoxGroupAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideIfAttribute.cs" />
@@ -67,6 +71,7 @@
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ReadOnlyAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableLucidEditorAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Simple 2D Platformer BE2\ReadMe\Scripts\ReadmeBE2.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemySpawner.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\AssetsOnlyAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\RequiredAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HorizontalGroupAttribute.cs" />
@@ -76,6 +81,7 @@
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\PropertyOrderAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Pixel Art Platformer - Village Props\Script\Elevator.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\FoldoutGroupAttribute.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\CameraScripts\CameraFollow.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\LabelTextAttribute.cs" />
@@ -98,6 +104,7 @@
     <Compile Include="Assets\Scripts\EnemyScripts\Enemy.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxIfAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowInInspectorAttribute.cs" />
+    <Compile Include="Assets\Scripts\MoneyManagementScripts\Coin.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowIfAttribute.cs" />
     <Compile Include="Assets\UnityStoreAssets\Cainos\Common\Script\Utils\SecondOrderDynamics.cs" />
   </ItemGroup>

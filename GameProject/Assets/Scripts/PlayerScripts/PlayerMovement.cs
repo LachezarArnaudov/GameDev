@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 8f;
     public float jumpForce = 12f;
 
+    [Header("Knockback Settings")]
+    public float knockbackForce = 10f;
+    public float knockbackDuration = 0.2f;
+    private bool isKnockedBack = false;
+
     [Header("Jump smoothness")]
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
@@ -55,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (isDashing) return;
+        if (isDashing || isKnockedBack) return;
 
         if (hasDash && Input.GetKeyDown(KeyCode.LeftShift) && canDashFlag)
         {
@@ -113,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDashing) return;
+        if (isDashing || isKnockedBack) return;
 
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
@@ -159,6 +164,24 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDashFlag = true;
+    }
+
+    public void ApplyKnockback(Vector2 sourcePosition)
+    {
+        if (isKnockedBack) return;
+
+        isKnockedBack = true;
+
+        float direction = transform.position.x < sourcePosition.x ? -1 : 1;
+
+        rb.linearVelocity = new Vector2(direction * knockbackForce, knockbackForce * 0.5f);
+
+        Invoke("StopKnockback", knockbackDuration);
+    }
+
+    void StopKnockback()
+    {
+        isKnockedBack = false;
     }
 
     private void OnDrawGizmosSelected()

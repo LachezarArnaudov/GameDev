@@ -25,8 +25,10 @@ public class Bench : MonoBehaviour
             PlayerHealth health = player.GetComponent<PlayerHealth>();
             PlayerMovement movement = player.GetComponent<PlayerMovement>();
 
-            health.lastBenchPosition = transform.position;
+            PlayerCurrency currency = player.GetComponent<PlayerCurrency>();
+            PlayerInventory inventory = player.GetComponent<PlayerInventory>();
 
+            health.lastBenchPosition = transform.position;
             health.HealFull();
 
             PlayerPrefs.SetFloat("SavedPosX", transform.position.x);
@@ -34,6 +36,11 @@ public class Bench : MonoBehaviour
             PlayerPrefs.SetInt("HasDash", movement.hasDash ? 1 : 0);
             PlayerPrefs.SetInt("HasDoubleJump", movement.hasDoubleJump ? 1 : 0);
             PlayerPrefs.SetInt("HasWallJump", movement.hasWallJump ? 1 : 0);
+
+            if (currency != null) PlayerPrefs.SetInt("CurrentCoins", currency.currentCoins);
+            if (inventory != null) PlayerPrefs.SetInt("HealPotions", inventory.healPotions);
+            PlayerPrefs.SetInt("MaxHealth", health.maxHealth);
+
             PlayerPrefs.SetInt("HasSaved", 1);
             PlayerPrefs.Save();
 

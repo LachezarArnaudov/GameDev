@@ -27,8 +27,21 @@ public class PlayerHealth : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
+
+        if (PlayerPrefs.GetInt("HasSaved", 0) == 1)
+        {
+            maxHealth = PlayerPrefs.GetInt("MaxHealth", maxHealth);
+
+            float savedX = PlayerPrefs.GetFloat("SavedPosX");
+            float savedY = PlayerPrefs.GetFloat("SavedPosY");
+            lastBenchPosition = new Vector3(savedX, savedY, transform.position.z);
+        }
+        else
+        {
+            lastBenchPosition = transform.position;
+        }
+
         currentHealth = maxHealth;
-        lastBenchPosition = transform.position;
         UpdateHeartsUI();
     }
 

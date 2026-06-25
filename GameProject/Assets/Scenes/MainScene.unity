@@ -6784,7 +6784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742168414094503452, guid: 05380b37957db1f4b9da37ee9098c17f, type: 3}
       propertyPath: m_Name
-      value: Spike (1)
+      value: Spike
       objectReference: {fileID: 0}
     - target: {fileID: 1742168414094503452, guid: 05380b37957db1f4b9da37ee9098c17f, type: 3}
       propertyPath: m_Layer
@@ -7185,7 +7185,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2526028528993574808, guid: 9e11131cbc70cf94fbd1959cabc7c01e, type: 3}
       propertyPath: m_Name
-      value: Bench (1)
+      value: Bench
       objectReference: {fileID: 0}
     - target: {fileID: 4194864127098745031, guid: 9e11131cbc70cf94fbd1959cabc7c01e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62919,12 +62919,11 @@ SceneRoots:
   - {fileID: 1815129980857814570}
   - {fileID: 378041600}
   - {fileID: 1678932349325026192}
+  - {fileID: 1844331124}
   - {fileID: 1569153921}
   - {fileID: 1433219330}
-  - {fileID: 1894775387864283622}
   - {fileID: 3760698106378642075}
   - {fileID: 238550543}
-  - {fileID: 1569961608}
   - {fileID: 418639003}
   - {fileID: 1231348735}
   - {fileID: 1721361317}
@@ -62932,6 +62931,8 @@ SceneRoots:
   - {fileID: 1239115639}
   - {fileID: 216299207}
   - {fileID: 1849338196}
+  - {fileID: 1894775387864283622}
+  - {fileID: 1569961608}
   - {fileID: 1919980421}
   - {fileID: 1018125285}
   - {fileID: 1384309985}
@@ -62945,4 +62946,3 @@ SceneRoots:
   - {fileID: 1475073984}
   - {fileID: 1216513907}
   - {fileID: 578203869}
-  - {fileID: 1844331124}

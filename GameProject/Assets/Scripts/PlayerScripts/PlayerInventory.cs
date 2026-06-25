@@ -15,6 +15,12 @@ public class PlayerInventory : MonoBehaviour
     void Start()
     {
         playerHealth = GetComponent<PlayerHealth>();
+
+        if (PlayerPrefs.GetInt("HasSaved", 0) == 1)
+        {
+            healPotions = PlayerPrefs.GetInt("HealPotions", 0);
+        }
+
         UpdateUI();
     }
 

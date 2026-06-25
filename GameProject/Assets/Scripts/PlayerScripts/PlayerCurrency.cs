@@ -9,6 +9,11 @@ public class PlayerCurrency : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("HasSaved", 0) == 1)
+        {
+            currentCoins = PlayerPrefs.GetInt("CurrentCoins", 0);
+        }
+
         UpdateUI();
     }
 

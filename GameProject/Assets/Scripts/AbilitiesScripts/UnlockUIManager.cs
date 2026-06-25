@@ -12,6 +12,13 @@ public class UnlockUIManager : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Debug.LogWarning("Destroying the second UnlockUIManager in the scene!");
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
     }
 

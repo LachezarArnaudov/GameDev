@@ -18,6 +18,24 @@ public class ShopManager : MonoBehaviour
     private bool isPlayerNear = false;
     private bool isShopOpen = false;
 
+    private PlayerCurrency wallet;
+    private PlayerHealth health;
+    private PlayerAttack attack;
+    private PlayerInventory inventory;
+
+    void Start()
+    {
+        wallet = FindFirstObjectByType<PlayerCurrency>();
+        health = FindFirstObjectByType<PlayerHealth>();
+        attack = FindFirstObjectByType<PlayerAttack>();
+        inventory = FindFirstObjectByType<PlayerInventory>();
+
+        if (wallet == null) Debug.LogWarning("ShopManager: PlayerCurrency not found!");
+        if (health == null) Debug.LogWarning("ShopManager: PlayerHealth not found!");
+        if (attack == null) Debug.LogWarning("ShopManager: PlayerAttack not found!");
+        if (inventory == null) Debug.LogWarning("ShopManager: PlayerInventory not found!");
+    }
+
     void Update()
     {
         if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
@@ -44,47 +62,39 @@ public class ShopManager : MonoBehaviour
 
     public void BuyHealthUpgrade()
     {
-        PlayerCurrency wallet = FindFirstObjectByType<PlayerCurrency>();
-        PlayerHealth health = FindFirstObjectByType<PlayerHealth>();
+        if (wallet == null || health == null) return;
 
         if (wallet.currentCoins >= healthUpgradePrice && health.maxHealth < maxHeartsLimit)
         {
-            wallet.currentCoins -= healthUpgradePrice;
-            wallet.AddCoins(0);
-
+            wallet.SpendCoins(healthUpgradePrice);
             health.maxHealth += 1;
             health.HealFull();
             Debug.Log("Succesful health increase");
         }
         else if (health.maxHealth >= maxHeartsLimit)
         {
-            Debug.Log("Can't buy more hearts! You already have the max!!");    
+            Debug.Log("Can't buy more hearts! You already have the max!!");
         }
     }
 
     public void BuyDamageUpgrade()
     {
-        PlayerCurrency wallet = FindFirstObjectByType<PlayerCurrency>();
-        PlayerAttack attack = FindFirstObjectByType<PlayerAttack>();
+        if (wallet == null || attack == null) return;
 
-        if (attack != null && wallet.currentCoins >= damageUpgradePrice)
+        if (wallet.currentCoins >= damageUpgradePrice)
         {
-            wallet.currentCoins -= damageUpgradePrice;
-            wallet.AddCoins(0);
+            wallet.SpendCoins(damageUpgradePrice);
             attack.attackDamage += 25;
             Debug.Log("Succesful attack increase. Current attack damage is: " + attack.attackDamage);
-        } 
+        }
     }
     public void BuyHealPotion()
     {
-        PlayerCurrency wallet = FindFirstObjectByType<PlayerCurrency>();
-        PlayerInventory inventory = FindFirstObjectByType<PlayerInventory>();
+        if (wallet == null || inventory == null) return;
 
         if (wallet.currentCoins >= healPotionPrice)
         {
-            wallet.currentCoins -= healPotionPrice;
-            wallet.AddCoins(0);
-
+            wallet.SpendCoins(healPotionPrice);
             inventory.AddPotion(1);
             Debug.Log("Bought a potion.");
         }

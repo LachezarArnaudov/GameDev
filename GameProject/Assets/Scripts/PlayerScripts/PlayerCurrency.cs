@@ -19,6 +19,13 @@ public class PlayerCurrency : MonoBehaviour
         Debug.Log("Money: " + currentCoins);
     }
 
+    public void SpendCoins(int amount)
+    {
+        currentCoins -= amount;
+        UpdateUI();
+        Debug.Log("Spent " + amount + " coins. Remaining: " + currentCoins);
+    }
+
     public void ResetCoins()
     {
         currentCoins = 0;

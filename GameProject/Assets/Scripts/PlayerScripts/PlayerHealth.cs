@@ -18,8 +18,15 @@ public class PlayerHealth : MonoBehaviour
     public bool isInvincible = false;
     public float invincibilityDuration = 0.5f;
 
+    [Header("Audio Settings")]
+    public AudioClip hurtSound;
+    private AudioSource audioSource;
+    private PlayerMovement playerMovement;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        playerMovement = GetComponent<PlayerMovement>();
         currentHealth = maxHealth;
         lastBenchPosition = transform.position;
         UpdateHeartsUI();
@@ -29,11 +36,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvincible) return false;
 
+        audioSource.PlayOneShot(hurtSound);
+
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
         UpdateHeartsUI();
 
-        GetComponent<PlayerMovement>().ApplyKnockback(damageSourcePosition);
+        playerMovement.ApplyKnockback(damageSourcePosition);
 
         if (currentHealth <= 0)
         {
@@ -89,7 +98,7 @@ public class PlayerHealth : MonoBehaviour
         {
             wallet.ResetCoins();
         }
-      
+
         HealFull();
         isInvincible = false;
         transform.position = lastBenchPosition + new Vector3(0, 1.2f, 0);

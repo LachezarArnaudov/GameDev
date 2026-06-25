@@ -23,10 +23,19 @@ public class Bench : MonoBehaviour
         if (player != null)
         {
             PlayerHealth health = player.GetComponent<PlayerHealth>();
+            PlayerMovement movement = player.GetComponent<PlayerMovement>();
 
             health.lastBenchPosition = transform.position;
 
             health.HealFull();
+
+            PlayerPrefs.SetFloat("SavedPosX", transform.position.x);
+            PlayerPrefs.SetFloat("SavedPosY", transform.position.y);
+            PlayerPrefs.SetInt("HasDash", movement.hasDash ? 1 : 0);
+            PlayerPrefs.SetInt("HasDoubleJump", movement.hasDoubleJump ? 1 : 0);
+            PlayerPrefs.SetInt("HasWallJump", movement.hasWallJump ? 1 : 0);
+            PlayerPrefs.SetInt("HasSaved", 1);
+            PlayerPrefs.Save();
 
             Debug.Log("Save");
         }

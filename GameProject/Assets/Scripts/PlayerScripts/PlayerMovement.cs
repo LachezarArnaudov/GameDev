@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Unlocked Abilities")]
     public bool hasDash = false;
     public bool hasDoubleJump = false;
+    public bool hasWallJump = false;
 
     [Header("Dash Settings")]
     public float dashSpeed = 24f;
@@ -20,6 +21,19 @@ public class PlayerMovement : MonoBehaviour
     [Header("DoubleJump Settings")]
     public int extraJumpsValue = 1;
     private int jumpsLeft;
+
+    [Header("Wall Slide & Jump Settings")]
+    public Transform wallCheck;
+    public LayerMask wallLayer;
+    public float wallSlideSpeed = 2f;
+    public Vector2 wallJumpPower = new Vector2(8f, 12f);
+    public float wallJumpDuration = 0.2f;
+
+    private bool isTouchingWall;
+    private bool isWallSliding;
+    private bool isWallJumping;
+    private float wallJumpDirection;
+    private float wallJumpCounter;
 
     [Header("Main Settings")]
     public float moveSpeed = 8f;
@@ -50,17 +64,46 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool isFacingRight = true;
 
+    [Header("Audio Settings")]
+    public AudioClip footstepSound;
+    [Range(0f, 1f)] public float footstepVolume = 0.5f;
+    public AudioClip jumpSound;
+    [Range(0f, 1f)] public float jumpVolume = 0.5f;
+    private AudioSource audioSource;
+
     private Animator anim;
+    private DashTrail dashTrail;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        dashTrail = GetComponent<DashTrail>();
+
+        if (PlayerPrefs.GetInt("HasSaved", 0) == 1)
+        {
+            float savedX = PlayerPrefs.GetFloat("SavedPosX");
+            float savedY = PlayerPrefs.GetFloat("SavedPosY");
+
+            transform.position = new Vector3(savedX, savedY, transform.position.z);
+
+            hasDash = PlayerPrefs.GetInt("HasDash", 0) == 1;
+            hasDoubleJump = PlayerPrefs.GetInt("HasDoubleJump", 0) == 1;
+            hasWallJump = PlayerPrefs.GetInt("HasWallJump", 0) == 1;
+
+            Debug.Log("Logged position and loaded abilities!");
+        }
+
+        lastSafePosition = transform.position;
     }
 
     void Update()
     {
         if (isDashing || isKnockedBack) return;
+
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
 
         if (hasDash && Input.GetKeyDown(KeyCode.LeftShift) && canDashFlag)
         {
@@ -68,8 +111,10 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+        if (wallCheck != null)
+        {
+            isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+        }
 
         if (isGrounded)
         {
@@ -82,50 +127,120 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
+        WallSlide();
+        WallJump();
+
         if (Input.GetButtonDown("Jump"))
         {
-            jumpBufferCounter = jumpBufferTime;
+            if (wallJumpCounter > 0f && hasWallJump)
+            {
+            }
+            else
+            {
+                jumpBufferCounter = jumpBufferTime;
+            }
         }
         else
         {
             jumpBufferCounter -= Time.deltaTime;
         }
 
-        if (jumpBufferCounter > 0f)
+        if (jumpBufferCounter > 0f && !isWallJumping)
         {
             if (coyoteTimeCounter > 0f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 jumpBufferCounter = 0f;
+                PlayJumpSound();
             }
             else if (jumpsLeft > 0 && hasDoubleJump)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 jumpsLeft--;
                 jumpBufferCounter = 0f;
+                PlayJumpSound();
             }
         }
 
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && !isWallJumping)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * lowJumpMultiplier);
             coyoteTimeCounter = 0f;
         }
 
-        Flip();
+        if (!isWallJumping)
+        {
+            Flip();
+        }
+
         UpdateAnimations();
     }
 
     void FixedUpdate()
     {
-        if (isDashing || isKnockedBack) return;
+        if (isDashing || isKnockedBack || isWallJumping) return;
 
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
-        if (rb.linearVelocity.y < 0)
+        if (rb.linearVelocity.y < 0 && !isWallSliding)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
+        else if (rb.linearVelocity.y > 0 && !Input.GetButton("Jump") && !isWallSliding)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
+        }
+    }
+
+    private void WallSlide()
+    {
+        if (hasWallJump && isTouchingWall && !isGrounded && horizontalInput != 0f)
+        {
+            isWallSliding = true;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+    }
+
+    private void WallJump()
+    {
+        if (isWallSliding)
+        {
+            isWallJumping = false;
+            wallJumpDirection = -Mathf.Sign(transform.localScale.x);
+            wallJumpCounter = coyoteTime;
+            CancelInvoke(nameof(StopWallJump));
+        }
+        else
+        {
+            wallJumpCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump") && wallJumpCounter > 0f)
+        {
+            isWallJumping = true;
+            rb.linearVelocity = new Vector2(wallJumpDirection * wallJumpPower.x, wallJumpPower.y);
+            wallJumpCounter = 0f;
+
+            PlayJumpSound();
+
+            if (Mathf.Sign(transform.localScale.x) != wallJumpDirection)
+            {
+                isFacingRight = !isFacingRight;
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
+
+            Invoke(nameof(StopWallJump), wallJumpDuration);
+        }
+    }
+
+    private void StopWallJump()
+    {
+        isWallJumping = false;
     }
 
     private void Flip()
@@ -138,16 +253,17 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
     private void UpdateAnimations()
     {
         anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
-
-        anim.SetBool("IsGrounded", isGrounded);        
+        anim.SetBool("IsGrounded", isGrounded);
     }
 
     private System.Collections.IEnumerator PerformDash()
     {
-        GetComponent<DashTrail>().StartTrail(dashDuration);
+        if (dashTrail != null)
+            dashTrail.StartTrail(dashDuration);
 
         canDashFlag = false;
         isDashing = true;
@@ -169,19 +285,30 @@ public class PlayerMovement : MonoBehaviour
     public void ApplyKnockback(Vector2 sourcePosition)
     {
         if (isKnockedBack) return;
-
         isKnockedBack = true;
-
         float direction = transform.position.x < sourcePosition.x ? -1 : 1;
-
         rb.linearVelocity = new Vector2(direction * knockbackForce, knockbackForce * 0.5f);
-
-        Invoke("StopKnockback", knockbackDuration);
+        Invoke(nameof(StopKnockback), knockbackDuration); 
     }
 
     void StopKnockback()
     {
         isKnockedBack = false;
+    }
+
+    public void PlayFootstepSound()
+    {
+        if (isGrounded && audioSource != null && footstepSound != null)
+        {
+            audioSource.PlayOneShot(footstepSound, footstepVolume);
+        }
+    }
+    public void PlayJumpSound()
+    {
+        if (audioSource != null && jumpSound != null)
+        {
+            audioSource.PlayOneShot(jumpSound, jumpVolume);
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -190,6 +317,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        }
+
+        if (wallCheck != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(wallCheck.position, 0.2f);
         }
     }
 }

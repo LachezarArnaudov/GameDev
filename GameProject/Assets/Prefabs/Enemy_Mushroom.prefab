@@ -148,7 +148,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4723107735738678597, guid: f8b30c2afe165d645b54d500a9c30862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -233,11 +233,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4904279819519763694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1270d0694c1c7514482a4fdd74aae6e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d8a59d1420d2f7438cf045b9eb35de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   maxHealth: 100
-  knockbackForce: 10
+  knockbackForce: 5
   coinPrefab: {fileID: 2085079510398260901, guid: f5a4b5ae19575714c933377b9dc21d5b, type: 3}
   minCoinsToDrop: 2
   maxCoinsToDrop: 5

@@ -1,12 +1,258 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\respawnscripts\\bench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\respawnscripts\\bench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\playerscripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerscripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\playerscripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerscripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\gamemanagementscripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagementscripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\camerascripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerascripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\abilitiesscripts\\dashtrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\abilitiesscripts\\dashtrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\abilitiesscripts\\unlockuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\abilitiesscripts\\unlockuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\abilitiesscripts\\abilityitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\abilitiesscripts\\abilityitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\enemyscripts\\kamikazeenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyscripts\\kamikazeenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\enemyscripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyscripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\playerscripts\\playercurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerscripts\\playercurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\moneymanagementscripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\moneymanagementscripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\playerscripts\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerscripts\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\boqgi\\desktop\\gamedev\\unityprojects\\gameproject\\assets\\scripts\\enemyscripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyscripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerScripts\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerScripts\\PlayerMovement.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAQwFgAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T21:22:02.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerHealth.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:54:59.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PlayerAttack.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerAttack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerScripts\\PlayerAttack.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerAttack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerScripts\\PlayerAttack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T11:12:24.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\EnemyScripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyScripts\\Enemy.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\EnemyScripts\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyScripts\\Enemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-25T10:50:33.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "KamikazeEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\EnemyScripts\\KamikazeEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyScripts\\KamikazeEnemy.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\EnemyScripts\\KamikazeEnemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyScripts\\KamikazeEnemy.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T23:02:03.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EnemyAI.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\EnemyScripts\\EnemyAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyScripts\\EnemyAI.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\EnemyScripts\\EnemyAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyScripts\\EnemyAI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T23:01:54.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ShopManager.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\MoneyManagementScripts\\ShopManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MoneyManagementScripts\\ShopManager.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\MoneyManagementScripts\\ShopManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MoneyManagementScripts\\ShopManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-25T10:47:49.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlayerCurrency.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerCurrency.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerScripts\\PlayerCurrency.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\PlayerScripts\\PlayerCurrency.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerScripts\\PlayerCurrency.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-25T10:47:57.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Bench.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\RespawnScripts\\Bench.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RespawnScripts\\Bench.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\RespawnScripts\\Bench.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RespawnScripts\\Bench.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:17:23.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AbilityItem.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\AbilitiesScripts\\AbilityItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AbilitiesScripts\\AbilityItem.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\AbilitiesScripts\\AbilityItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AbilitiesScripts\\AbilityItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T21:22:18.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DashTrail.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\AbilitiesScripts\\DashTrail.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AbilitiesScripts\\DashTrail.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\AbilitiesScripts\\DashTrail.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AbilitiesScripts\\DashTrail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T16:32:47.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UnlockUIManager.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\AbilitiesScripts\\UnlockUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AbilitiesScripts\\UnlockUIManager.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\AbilitiesScripts\\UnlockUIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AbilitiesScripts\\UnlockUIManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T23:01:44.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CameraFollow.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\CameraScripts\\CameraFollow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraScripts\\CameraFollow.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\CameraScripts\\CameraFollow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraScripts\\CameraFollow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T23:01:45.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\GameManagementScripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManagementScripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\boqgi\\Desktop\\GameDev\\UnityProjects\\GameProject\\Assets\\Scripts\\GameManagementScripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManagementScripts\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-25T11:17:07.825Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
